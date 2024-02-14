@@ -1,5 +1,5 @@
 {% set name = "anchor-droplet-chip" %}
-{% set version = "0.4.0" %}
+{% set version = "0.4.3" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/anchor_droplet_chip-{{ version }}.tar.gz
-  sha256: 5724f1c1ec67ad5442720d1089b72bf06ece45bc59ab72ba28850d1a77dc1125
+  sha256: 1e8e5bb35a254ec458bfbe5646c4391c3a3b96a0138793a24e1c9283aa8e9c50
 
 build:
   noarch: python
