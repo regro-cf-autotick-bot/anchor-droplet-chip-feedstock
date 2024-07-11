@@ -25,6 +25,7 @@ requirements:
     - dask-core
     - fire
     - jupyterlab
+    - magicgui
     - matplotlib-base
     - napari
     - nd2
@@ -37,13 +38,14 @@ requirements:
     - scipy
     - seaborn
     - tifffile
+    - tqdm
     - zarr-tools
     - zenodo_get
 
 test:
   imports:
     - adc
-    # - imreg_dft
+    - imreg_dft
   commands:
     - pip list
     # - pip check  # Fails due to pyqt6
