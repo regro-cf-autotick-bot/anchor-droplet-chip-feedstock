@@ -6,18 +6,18 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
   sha256: a7a81eeb472e2bd90dbca39ce45efc5981adf81f2e22aea9d068a85115e38748
 
 build:
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv
-  number: 0
+  number: 1
 
 requirements:
   host:
     - pip
-    - python >=3.8
+    - python {{ python_min }}
     - setuptools >=40.9.0
     - setuptools-scm
     - wheel
@@ -32,7 +32,7 @@ requirements:
     - numpy
     - pandas
     # - pytest-qt
-    - python >=3.8
+    - python >={{ python_min }}
     - pyyaml
     - scikit-image
     - scipy
@@ -51,6 +51,7 @@ test:
     # - pip check  # Fails due to pyqt6
   requires:
     - pip
+    - python {{ python_min }}
 
 about:
   home: https://pypi.org/project/anchor-droplet-chip
